@@ -1,0 +1,74 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title My Home | Add Product
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css", rel="stylesheet", integrity="sha284-T2c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN", crossorigin="anonymous")
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css", rel="stylesheet")
+    style
+      | @import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Protest+Riot&display=swap');
+    link(rel="stylesheet", type="text/css" href="/css/styles.css")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js", crossorigin="anonymous")
+
+  body
+    
+    nav.navbar.navbar-expand-lg.bg-body-tertiary
+      .container-fluid
+        a.navbar-brand.fontStyle.fs-2.mx-auto(href="/") My Home
+        button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse.text1(id="navbarSupportedContent")
+          ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.fs-5(aria-current="page", href="/") Home
+            li.nav-item
+              a.nav-link.active.fs-5(href="/shop") Shop
+            li.nav-item
+              a.nav-link.fs-5(href="/about") About
+
+
+
+    .container.mt-5
+      .row.justify-content-center
+        .col-md-6
+          form(action="/shop/add-product/submit" method="post" class="mt-5")
+            .form-group
+              label(for="productName") Product Name:
+              input(type="text", id="productName", name="name", class="form-control", placeholder="Standing Mirror", required)
+
+            .form-group
+              label(for="productPrice") Product Price:
+              input(type="number", id="productPrice", name="price", class="form-control", placeholder="99", required)
+
+            .form-group
+              label(for="productImage") Product Image:
+              input(type="text", id="productImage", name="imageUrl", class="form-control", placeholder="standingmirror.jpeg", required)
+
+            button(type="submit", class="btn btn-dark mt-3") Add Product
+  
+  footer.footer.mt-1.fixed-bottom
+    .container
+      .row
+        .col-md-4.footer-section
+            a.navbar-brand.fontStyle.fs-2.mx-auto(href="/") My Home
+            p.description At 'My Home,' our passion for transforming spaces into personalized sanctuaries drives us to bring you a unique blend of elegance and functionality
+        .col-md-4.footer-section
+            h5 Follow Us
+            .social-icons
+                a(href="#" target="_blank")
+                    img(src="/images/facebook2 Background Removed.png", alt="Facebook")
+                a(href="#" target="_blank")
+                    img(src="/images/twitter.png", alt="Twitter")
+                a(href="#" target="_blank")
+                    img(src="/images/insta2 Background Removed.png", alt="Instagram")
+                a(href="#" target="_blank")
+                    img(src="/images/linkedin.png", alt="LinkedIn")
+
+        .col-md-4.footer-section
+            h5 Newsletter
+            form.newsletter-form
+                input(type="email", class="form-control newsletter-input", placeholder="Enter your email")
+                button(type="submit", class="btn btn-dark newsletter-button mt-3") Subscribe
+
